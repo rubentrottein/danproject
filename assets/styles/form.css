@@ -1,0 +1,34 @@
+
+body{
+    background: url("https://picsum.photos/id/170/1980/1280") fixed no-repeat;
+    background-size: cover;
+}
+#inscription {
+    display: grid;
+    place-content: center;
+}
+#inscription h1{
+    text-align: center;
+    margin: 1em;
+    font-weight: 100;
+}
+#inscription form{
+    display: grid;
+    border: 1px solid black;
+    border-radius : 1em;
+    padding: 1em;
+    background: var(--t-black);
+    backdrop-filter: blur(5px);
+    color: var(--white);
+}
+#inscription form div{
+    display: flex;
+    margin: 1em;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+#inscription [type = "submit"]{
+    width: 80%;
+    margin: auto;
+}

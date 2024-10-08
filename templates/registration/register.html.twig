@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+
+{% block custom_stylesheets %}
+    <link rel="stylesheet" href="{{asset("/assets/styles/home.css")}}" />
+    <link rel="stylesheet" href="{{asset("/assets/styles/form.css")}}" />
+{% endblock %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+    <section id="inscription">
+        {% for flash_error in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+        
+        <h1>Inscription</h1>
+
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+        <div>
+            {{ form_row(registrationForm.email) }}
+        </div>
+        <div>
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+        </div>
+        <div>
+            {{ form_row(registrationForm.agreeTerms) }}
+        </div>
+        <div>
+            <button type="submit" class="btn">S'inscrire</button>
+        </div>
+        {{ form_end(registrationForm) }}
+    </section>
+{% endblock %}
